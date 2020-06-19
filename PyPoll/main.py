@@ -12,6 +12,8 @@ with open(my_path) as csvfile:
     header = next(csvreader)
     for row in csvreader:
         total += 1
+        #If the candidate in the current row has not been seen before it is added to our dictionary
+        #If it has been seen before it increases the value of that key by one
         if row[2] not in candidateList:
             candidateList[row[2]] = 1
         else:
